@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BoltIcon, Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Link, NavLink } from 'react-router-dom';
 import Lottie from "lottie-react";
 import chef from './139086-3d-chef-dancing.json'

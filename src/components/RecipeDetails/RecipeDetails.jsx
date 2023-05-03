@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import experience from '../../assets/experience.png';
+import { HandThumbUpIcon } from '@heroicons/react/24/solid'
 
 
 const RecipeDetails = () => {
@@ -14,21 +16,28 @@ const RecipeDetails = () => {
                 setData(unique)
             })
     }, [])
-
+    // chefName, yearsOfExperience, numberOfRecipes, likes, bio,recipe,chefPicture
     console.log(data);
     return (
-        <div>
-            <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure><img className='w-full h-80 object-cover' src={data.chefPicture} alt="Album" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">New album is released!</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Listen</button>
+        <div className='px-4 md:px-24 lg:px-8 grid grid-cols-1 md:grid-cols-2'>
+            <div>
+                <img className='w-96 h-96 object-cover rounded' src={data.chefPicture} alt="" />
+            </div>
+            <div>
+                <h1>{data.chefName}</h1>
+                <p>{data.bio}</p>
+                <div className='flex items-center justify-around'>
+                    <div className='flex items-center'>
+                        <img className='w-16 rounded-full' src={experience} alt="" />
+                        <p className='text-2xl'>Experience {data.yearsOfExperience} years</p>
                     </div>
+                    <div className='flex items-center'>
+                        <HandThumbUpIcon className='w-16 rounded-full fill-green-700'></HandThumbUpIcon>
+                        <p>Total Likes: {data.likes}</p>
+                    </div>
+                    <p>Number of Recipe: {data.numberOfRecipes}</p>
                 </div>
             </div>
-
         </div>
     );
 };

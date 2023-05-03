@@ -1,21 +1,21 @@
-import React from 'react';
+// import React from 'react';
 
-const ViewRecipe = ({ details }) => {
-    const { chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes, bio, recipe } = details;
-    return (
-        <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img src={chefPicture} alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
+// const ViewRecipe = ({ details }) => {
+//     const { chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes, bio, recipe } = details;
+//     return (
+//         <div>
+//             <div className="card w-96 bg-base-100 shadow-xl">
+//                 <figure><img src={chefPicture} alt="Shoes" /></figure>
+//                 <div className="card-body">
+//                     <h2 className="card-title">Shoes!</h2>
+//                     <p>If a dog chews shoes whose shoes does he choose?</p>
+//                     <div className="card-actions justify-end">
+//                         <button className="btn btn-primary">Buy Now</button>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
 
-export default ViewRecipe;
+// export default ViewRecipe;
