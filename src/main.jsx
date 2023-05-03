@@ -9,6 +9,7 @@ import About from './components/About/About'
 import RecipeDetails from './components/RecipeDetails/RecipeDetails'
 import ErrorPage from './components/ErrorPage/ErrorPage'
 import Login from './components/Login/Login'
+import Register from './components/Register/Register'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login></Login>
+      },
+      {
+        path: "register",
+        element: <Register></Register>
       },
       {
         path: 'recipe/:id',
