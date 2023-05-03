@@ -14,9 +14,9 @@ const Navbar = () => {
                     className='inline-flex items-center'>
                     <span className='ml-2 font-bold text-xl tracking-wide text-gray-800'>YourChef
                     </span>
-                    <Lottie className='w-24 h-24' animationData={chef}></Lottie>
-
-
+                    <Lottie
+                        className='w-24 h-24'
+                        animationData={chef}></Lottie>
                 </Link >
 
                 {/* nav section  */}
@@ -38,10 +38,19 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/about'
+                        <NavLink
+                            to='/about'
                             className={({ isActive }) => (isActive ? 'active hover:text-blue-400' : 'default hover:text-blue-400')}
                         >
                             About
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to='/login'
+                            className={({ isActive }) => (isActive ? 'active hover:text-blue-400' : 'default hover:text-blue-400')}
+                        >
+                            Login
                         </NavLink>
                     </li>
                 </ul>
@@ -107,7 +116,13 @@ const Navbar = () => {
                                         <li>
                                             <Link
                                                 to='/about'
-                                                className='font-medium tracking-wide text-gray-700 transition duration-200 hover:text-blue-400'>About Us
+                                                className='font-medium tracking-wide text-gray-700 transition duration-200 hover:text-blue-400'>About
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                to='/login'
+                                                className='font-medium tracking-wide text-gray-700 transition duration-200 hover:text-blue-400'>Login
                                             </Link>
                                         </li>
                                     </ul>

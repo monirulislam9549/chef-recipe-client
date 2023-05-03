@@ -8,6 +8,7 @@ import Blog from './components/Blog/Blog'
 import About from './components/About/About'
 import RecipeDetails from './components/RecipeDetails/RecipeDetails'
 import ErrorPage from './components/ErrorPage/ErrorPage'
+import Login from './components/Login/Login'
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About></About>
+      },
+      {
+        path: "login",
+        element: <Login></Login>
       },
       {
         path: 'recipe/:id',
