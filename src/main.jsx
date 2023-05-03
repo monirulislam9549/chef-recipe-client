@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-
 import App from './App'
 import Home from './components/Home/Home'
 import Blog from './components/Blog/Blog'
 import About from './components/About/About'
+import RecipeDetails from './components/RecipeDetails/RecipeDetails'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +24,11 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About></About>
+      },
+      {
+        path: ':id',
+        element: <RecipeDetails></RecipeDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/recipe/${params.id}`)
       }
     ]
   }

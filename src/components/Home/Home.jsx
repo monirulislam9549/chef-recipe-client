@@ -8,7 +8,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Chefs></Chefs>
-            <div className='min-h-[calc(100vh-136px)]'> <Outlet></Outlet></div>
+            {/* <Outlet></Outlet> */}
+            {/* <div className='min-h-[calc(100vh-100px)]'> </div> */}
         </div>
     );
 };

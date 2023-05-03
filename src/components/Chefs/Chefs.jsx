@@ -21,7 +21,7 @@ const Chefs = () => {
 
     return (
         <div className='px-4 md:px-24 lg:px-8'>
-            <h1>Choice Your Chef</h1>
+            <h1 className='text-5xl text-center font-bold my-10'>Choice Your Chef</h1>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
                     chefs?.map(chef => <ChefCard
