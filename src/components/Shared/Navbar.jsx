@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { BoltIcon, Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Link, NavLink } from 'react-router-dom';
+import Lottie from "lottie-react";
+import chef from './139086-3d-chef-dancing.json'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
-        <div className='bg-gray-100 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
+        <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
             <div className='relative flex items-center justify-between '>
                 <Link
                     to='/'
                     className='inline-flex items-center'>
-                    <BoltIcon className='h-6 w-6 text-blue-500'></BoltIcon>
-                    <span className='ml-2 font-bold text-xl tracking-wide text-gray-800'>nextPage</span>
+                    <span className='ml-2 font-bold text-xl tracking-wide text-gray-800'>YourChef
+                    </span>
+                    <Lottie className='w-24 h-24' animationData={chef}></Lottie>
+
+
                 </Link >
 
                 {/* nav section  */}
@@ -56,13 +61,22 @@ const Navbar = () => {
                                 {/* logo and button section */}
                                 <div className='flex items-center justify-between mb-4'>
                                     <div>
-                                        <Link to='/' className='inline-flex items-center'>
-                                            <BoltIcon className='h-6 w-6 text-blue-500'>
-                                                <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                                                    Next Page
-                                                </span>
-                                            </BoltIcon>
-                                        </Link>
+                                        <Link
+                                            to='/'
+                                            className='inline-flex items-center'>
+                                            <span
+                                                className='ml-2 font-bold text-xl tracking-wide text-gray-800'>
+                                                YourChef
+                                            </span>
+                                            <Lottie
+                                                className='w-24 h-24'
+                                                animationData={chef}>
+                                            </Lottie>
+
+
+
+                                        </Link >
+
                                     </div>
                                     <div>
                                         {/* dropdown button close button */}
