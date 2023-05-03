@@ -15,19 +15,31 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="text" placeholder="email" className="input input-bordered" />
+                            <input
+                                type="email"
+                                placeholder="email"
+                                className="input input-bordered"
+                                name='email'
+                                required
+                            />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" placeholder="password" className="input input-bordered" />
+                            <input
+                                type="password"
+                                placeholder="password"
+                                className="input input-bordered"
+                                name='password'
+                                required
+                            />
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
-                        <p>Don't have an account? <Link className='text-blue-500 underline' to="/register">Register</Link> </p>
                     </div>
+                    <p>Don't have an account? <Link className='text-blue-500 underline' to="/register">Register</Link> </p>
                 </div>
             </div>
         </div>
