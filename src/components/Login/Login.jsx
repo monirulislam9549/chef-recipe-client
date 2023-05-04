@@ -11,7 +11,7 @@ const Login = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || '/recipe/0'
+    const from = location.state?.from?.pathname || '/'
 
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
@@ -21,7 +21,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser);
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 // const errorCode = error.code;               
@@ -33,7 +33,7 @@ const Login = () => {
         socialUser(githubProvider)
             .then(result => {
                 console.log(result);
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
