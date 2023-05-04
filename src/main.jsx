@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: 'recipe/:id',
         element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/recipe')
+        loader: () => fetch(' https://chef-recipe-hunting-server-monirulislam9549.vercel.app/recipe')
       }
     ]
   }

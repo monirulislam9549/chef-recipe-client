@@ -6,7 +6,7 @@ const Chefs = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = `http://localhost:5000/recipe`
+            const url = ` https://chef-recipe-hunting-server-monirulislam9549.vercel.app/recipe`
             try {
                 const res = await fetch(url)
                 const data = await res.json()

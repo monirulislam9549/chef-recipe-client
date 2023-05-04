@@ -20,7 +20,7 @@ const RecipeDetails = () => {
 
     console.log(data.ingredients);
     useEffect(() => {
-        fetch(`http://localhost:5000/recipe`)
+        fetch(` https://chef-recipe-hunting-server-monirulislam9549.vercel.app/recipe`)
             .then(res => res.json())
             .then(data => {
                 const unique = data.find(match => match.id == id)
