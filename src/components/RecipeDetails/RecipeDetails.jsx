@@ -32,7 +32,7 @@ const RecipeDetails = () => {
                         <p className='text-2xl'>Experience {data.yearsOfExperience} years</p>
                     </div>
                     <div className='flex items-center'>
-                        <HandThumbUpIcon className='w-16 rounded-full fill-green-700'></HandThumbUpIcon>
+                        <HandThumbUpIcon className='w-16 rounded-full fill-blue-700'></HandThumbUpIcon>
                         <p>Total Likes: {data.likes}</p>
                     </div>
                     <p>Number of Recipe: {data.numberOfRecipes}</p>

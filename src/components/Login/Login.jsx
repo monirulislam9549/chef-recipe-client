@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
@@ -9,6 +9,10 @@ const Login = () => {
     const [success, setSuccess] = useState('')
     const { signIn, socialUser } = useContext(AuthContext)
 
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/recipe/0'
+
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
 
@@ -17,6 +21,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser);
+                // navigate(from, { replace: true })
             })
             .catch(error => {
                 // const errorCode = error.code;               
@@ -28,6 +33,7 @@ const Login = () => {
         socialUser(githubProvider)
             .then(result => {
                 console.log(result);
+                // navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
@@ -48,6 +54,7 @@ const Login = () => {
                 const user = userCredential.user;
                 setSuccess("User Logged Successfully")
                 event.target.reset();
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorCode = error.code;

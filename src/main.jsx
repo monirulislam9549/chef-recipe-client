@@ -11,7 +11,6 @@ import ErrorPage from './components/ErrorPage/ErrorPage'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import AuthProvider from './components/providers/AuthProvider'
-import PrivateRoute from './components/routes/PrivateRoute'
 
 const router = createBrowserRouter([
   {
@@ -41,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'recipe/:id',
-        element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>,
+        element: <RecipeDetails></RecipeDetails>,
         loader: () => fetch('http://localhost:5000/recipe')
       }
     ]
