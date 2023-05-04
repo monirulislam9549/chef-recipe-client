@@ -3,16 +3,11 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-// import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-// import { getAuth } from "firebase/auth";
-// import app from '../../firebase/firebase.config';
 
 const Login = () => {
-    // const auth = getAuth(app)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
     const { signIn, socialUser } = useContext(AuthContext)
-    const [user, setUser] = useState(null)
 
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
@@ -60,21 +55,6 @@ const Login = () => {
                 setError(errorCode, errorMessage)
             });
     }
-
-
-
-    // const handleGoogleSignIn = () => {
-    // signInWithPopup(auth, googleProvider)
-    //     .then(result => {
-    //         const loggedUser = result.user
-    //         console.log(loggedUser);
-    //         setUser(loggedUser)
-    //     })
-    //     .catch(error => {
-    //         // const errorCode = error.code;               
-    //         console.log('error', error.message);
-    //     })
-    // }
 
     return (
         <div className="hero min-h-screen bg-base-200">
