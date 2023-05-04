@@ -99,7 +99,7 @@ const Register = () => {
                                 name='password'
                                 required
                             />
-                            <span className='w-6 h-6 absolute right-10 top-44 cursor-pointer'><EyeSlashIcon ></EyeSlashIcon> </span>
+
                         </div>
                         <div className="form-control">
                             <label className="label">
