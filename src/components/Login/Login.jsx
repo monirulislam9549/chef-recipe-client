@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 // import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 // import { getAuth } from "firebase/auth";
 // import app from '../../firebase/firebase.config';
@@ -11,14 +11,14 @@ const Login = () => {
     // const auth = getAuth(app)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
-    const { signIn, googleUser } = useContext(AuthContext)
+    const { signIn, socialUser } = useContext(AuthContext)
     const [user, setUser] = useState(null)
 
-    // const githubProvider = new GithubAuthProvider()
     const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
 
     const handleGoogleSignIn = () => {
-        googleUser(googleProvider)
+        socialUser(googleProvider)
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser);
@@ -27,6 +27,10 @@ const Login = () => {
                 // const errorCode = error.code;               
                 console.log('error', error.message);
             })
+    }
+
+    const handleGithubSignIn = () => {
+
     }
 
     const handleSignIn = (event) => {
@@ -110,7 +114,7 @@ const Login = () => {
 
                     <div className='text-center flex flex-col'>
                         <button onClick={handleGoogleSignIn} className="btn btn-primary">Sign In With Google</button>
-                        <button className="mt-2 btn btn-primary">Sign In With Github</button>
+                        <button onClick={handleGithubSignIn} className="mt-2 btn btn-primary">Sign In With Github</button>
                     </div>
                     <p>Don't have an account? <Link className='text-blue-500 underline' to="/register">Register</Link> </p>
                 </div>
