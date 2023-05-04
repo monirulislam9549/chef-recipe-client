@@ -30,7 +30,13 @@ const Login = () => {
     }
 
     const handleGithubSignIn = () => {
-
+        socialUser(githubProvider)
+            .then(result => {
+                console.log(result);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     const handleSignIn = (event) => {

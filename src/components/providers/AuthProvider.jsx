@@ -21,9 +21,11 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
-    const socialUser = (googleProvider) => {
-        return signInWithPopup(auth, googleProvider)
+    const socialUser = (socialProvider) => {
+        return signInWithPopup(auth, socialProvider)
     }
+
+
 
     // const githubUser =(githubProvider)=>{
     //     return 
