@@ -1,11 +1,25 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 
 const Register = () => {
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
     const { createUser } = useContext(AuthContext)
+    // const [type, setType] = useState('password')
+    // const [eye, setEye] = useState(EyeSlashIcon)
+
+    // const handleHideShow = () => {
+    //     if (type === 'password') {
+    //         setEye(EyeIcon)
+    //         setType('text')
+    //     }
+    //     else {
+    //         setEye(EyeSlashIcon)
+    //         setType('password')
+    //     }
+    // }
 
     const handleRegister = (event) => {
         event.preventDefault()
@@ -17,6 +31,10 @@ const Register = () => {
         console.log(name, email, password, photo);
         setError('')
         setSuccess('')
+
+        if (password.length < 6) {
+            setError('Please Provide at least 6 character')
+        }
 
         createUser(email, password)
             .then((userCredential) => {
@@ -51,7 +69,7 @@ const Register = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input
-                                type="text"
+                                // type={type}
                                 placeholder="Your Name"
                                 className="input input-bordered"
                                 name='name'
@@ -81,6 +99,7 @@ const Register = () => {
                                 name='password'
                                 required
                             />
+                            <span className='w-6 h-6 absolute right-10 top-44 cursor-pointer'><EyeSlashIcon ></EyeSlashIcon> </span>
                         </div>
                         <div className="form-control">
                             <label className="label">

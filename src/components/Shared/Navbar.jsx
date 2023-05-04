@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Link, NavLink } from 'react-router-dom';
 import Lottie from "lottie-react";
 import chef from './139086-3d-chef-dancing.json'
+import { AuthContext } from '../providers/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                console.log(error);
+            });
+    }
+
     return (
         <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
             <div className='relative flex items-center justify-between '>
@@ -46,12 +58,16 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink
-                            to='/login'
-                            className={({ isActive }) => (isActive ? 'active hover:text-blue-400' : 'default hover:text-blue-400')}
-                        >
-                            Login
-                        </NavLink>
+                        {user ? <button
+                            className='active '
+                            onClick={handleLogout}> Logout</button>
+                            :
+                            <NavLink
+                                to='/login'
+                                className={({ isActive }) => (isActive ? 'active hover:text-blue-400' : 'default hover:text-blue-400')}
+                            >
+                                Login
+                            </NavLink>}
                     </li>
                 </ul>
                 {/* mobile navbar  */}
@@ -114,10 +130,16 @@ const Navbar = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link
-                                                to='/about'
-                                                className='font-medium tracking-wide text-gray-700 transition duration-200 hover:text-blue-400'>About
-                                            </Link>
+                                            {user ? <button
+                                                className='active '
+                                                onClick={handleLogout}> Logout</button>
+                                                :
+                                                <NavLink
+                                                    to='/login'
+                                                    className={({ isActive }) => (isActive ? 'active hover:text-blue-400' : 'default hover:text-blue-400')}
+                                                >
+                                                    Login
+                                                </NavLink>}
                                         </li>
                                         <li>
                                             <Link
