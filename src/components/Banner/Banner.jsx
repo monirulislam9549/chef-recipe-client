@@ -8,7 +8,7 @@ const Banner = () => {
                 <div className="max-w-md text-center">
                     <h1 className="mb-5 text-5xl font-bold ">Welcome to <br />
                         <span className='text-orange-500'>Your Chef</span></h1>
-                    <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <p className="mb-5 text-2xl font-semibold">Start eating, feeling and living better today.Build good habits with us and our meal plans.</p>
                     <div className="form-control">
                         <div className="input-group flex justify-center">
                             <input type="text" placeholder="Search…" className="input input-bordered" />
