@@ -89,11 +89,11 @@ const Register = () => {
                             <input
                                 type="password"
                                 placeholder="password"
-                                className="input input-bordered"
+                                className="input input-bordered relative"
                                 name='password'
                                 required
                             />
-
+                            <span className='w-6 h-6 absolute right-10 top-80 cursor-pointer'><EyeSlashIcon></EyeSlashIcon> </span>
                         </div>
                         <div className="form-control">
                             <label className="label">

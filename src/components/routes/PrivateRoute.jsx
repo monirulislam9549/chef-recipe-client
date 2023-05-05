@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
@@ -11,7 +12,9 @@ const PrivateRoute = ({ children }) => {
         return children
     }
     if (loading) {
-        return <progress className="progress w-56"></progress>
+        return <div className='text-center mt-20'>
+            <Loading></Loading>
+        </div>
     }
 
 

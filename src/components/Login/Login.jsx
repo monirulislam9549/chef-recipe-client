@@ -68,8 +68,9 @@ const Login = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
                     <form onSubmit={handleSignIn} className="card-body">
+                        <h1 className='text-center font-bold text-2xl'>Please Login</h1>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -94,20 +95,21 @@ const Login = () => {
                                 name='password'
                                 required
                             />
-                            <span className='w-6 h-6 absolute right-10 top-44 cursor-pointer'><EyeSlashIcon></EyeSlashIcon> </span>
+                            <span className='w-6 h-6 absolute right-10 top-52 cursor-pointer'><EyeSlashIcon></EyeSlashIcon> </span>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
                         <p className='text-red-600 text-center'>{error}</p>
                         <p className='text-blue-600 text-center'>{success}</p>
+                        <div className='text-center flex flex-col'>
+                            <button onClick={handleGoogleSignIn} className="btn btn-primary">Sign In With Google</button>
+                            <button onClick={handleGithubSignIn} className="mt-2 btn btn-primary">Sign In With Github</button>
+                        </div>
+
+                        <p>Don't have an account? <Link className='text-blue-500 underline' to="/register">Register</Link> </p>
                     </form>
 
-                    <div className='text-center flex flex-col'>
-                        <button onClick={handleGoogleSignIn} className="btn btn-primary">Sign In With Google</button>
-                        <button onClick={handleGithubSignIn} className="mt-2 btn btn-primary">Sign In With Github</button>
-                    </div>
-                    <p>Don't have an account? <Link className='text-blue-500 underline' to="/register">Register</Link> </p>
                 </div>
             </div>
         </div>
