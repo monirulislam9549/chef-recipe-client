@@ -7,7 +7,7 @@ const ChefCard = ({ chef }) => {
     const { id, chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes } = chef;
     return (
         <div>
-            <div className="card w-full h-full bg-base-100 shadow-lg gap-4">
+            <div className="card w-full h-full bg-base-100 shadow-md gap-4">
                 <figure><img className='w-full h-96' src={chefPicture} alt="" /></figure>
                 <div className='flex justify-around'>
                     <div className='flex items-center'>
