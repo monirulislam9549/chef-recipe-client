@@ -24,7 +24,7 @@ const Navbar = () => {
                 <Link
                     to='/'
                     className='inline-flex items-center'>
-                    <span className='ml-2 font-bold text-xl tracking-wide text-gray-800'>YourChef
+                    <span className='ml-2 font-bold text-xl tracking-wide text-gray-800'>Petite Cuisine
                     </span>
                     <Lottie
                         className='w-24 h-24'
@@ -91,7 +91,7 @@ const Navbar = () => {
                                             className='inline-flex items-center'>
                                             <span
                                                 className='ml-2 font-bold text-xl tracking-wide text-gray-800'>
-                                                YourChef
+                                                Petite Cuisine
                                             </span>
                                             <Lottie
                                                 className='w-24 h-24'

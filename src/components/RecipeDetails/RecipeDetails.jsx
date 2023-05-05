@@ -3,9 +3,12 @@ import { useParams } from 'react-router-dom';
 import { HandThumbUpIcon } from '@heroicons/react/24/solid'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
 
 const RecipeDetails = () => {
     const [data, setData] = useState({})
+    const [rating, setRating] = useState(0)
     // const [recipe, setRecipe] = useState([])
     const [selected, setSelected] = useState(false)
     const { id } = useParams()
@@ -32,50 +35,38 @@ const RecipeDetails = () => {
 
 
     return (
-        <div className="bg-base-100 shadow-xl px-10">
-            <div>
-                <img className='w-80' src={chefPicture} alt="Album" />
+        <div className="bg-base-100 px-10 mt-5">
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
+                <div>
+                    <img className='rounded' src={chefPicture} alt="Album" />
+                </div>
                 <div className=''>
-                    <p>{chefName}</p>
+                    <p className='font-bold text-xl'>{chefName}</p>
                     <p>{bio}</p>
                 </div>
             </div>
-            <div className='flex items-center'>
-                <HandThumbUpIcon className='fill-blue-700 w-8 mr-1'></HandThumbUpIcon>
-                <p className='font-semibold text-xl'>Likes: {likes}</p>
+            <div className='flex items-center gap-x-10 mt-4'>
+                <div className='flex items-center'><HandThumbUpIcon className='fill-blue-700 w-8 mr-1'></HandThumbUpIcon>
+                    <p className='font-semibold text-xl'>Likes: {likes}</p></div>
+                <p className='font-semibold text-xl'>Recipes: {numberOfRecipes} Item</p>
+                <p className='font-semibold text-xl'>Experience: {yearsOfExperience} year<sup>+</sup> </p>
+                <Rating style={{ maxWidth: 150 }} value={rating} onChange={setRating} />
             </div>
-            <p className='font-semibold text-xl'>Recipes: {numberOfRecipes} Item</p>
-            <p className='font-semibold text-xl'>Experience: {yearsOfExperience} year<sup>+</sup> </p>
-            <div className="card-body">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 my-10">
                 {recipes &&
                     recipes.map(recipe => (
-                        <div key={recipe.recipeTitle}>
-                            <h2>{recipe.recipeTitle}</h2>
-                            <ul>
+                        <div className='bg-slate-300 p-5 rounded-md' key={recipe.recipeTitle}>
+                            <h2 className='font-bold text-2xl mb-4'>{recipe.recipeTitle}</h2>
+                            <div>
                                 {recipe.ingredients.map(ingredient => (
                                     <li key={ingredient}>{ingredient}</li>
                                 ))}
-                            </ul>
+                            </div>
                         </div>
                     ))
                 }
-
-                {/* {recipes &&
-                    recipes.map(recipe => (
-                        <div key={recipe.recipeTitle}>
-                            <h1>{recipe.recipeTitle}</h1></div>
-
-                    ))
-
-                } */}
-                {/* {
-                    ingredients && ingredients.map((ingredient, index) => (
-                        <li key={index}>{ingredient}</li>
-                    ))
-                } */}
-
             </div>
-            <div><button disabled={selected} onClick={handleFavourite} className="btn btn-primary">Favourite</button>
+            <div className='text-center my-5'><button disabled={selected} onClick={handleFavourite} className="btn btn-primary">Add to Favourite</button>
                 <ToastContainer></ToastContainer>
             </div>
         </div>
