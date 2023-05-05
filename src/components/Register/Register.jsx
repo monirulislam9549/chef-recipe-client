@@ -49,21 +49,15 @@ const Register = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 setError(errorCode, errorMessage)
-                // ..
             });
-
-
     }
 
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Register!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
+                        <h1 className='text-center font-bold text-2xl'>Please Register</h1>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -118,8 +112,8 @@ const Register = () => {
                         </div>
                         <p className='text-red-600 text-center'>{error}</p>
                         <p className='text-blue-600 text-center'>{success}</p>
+                        <p>Already have an account? <Link className='text-blue-500 underline' to="/login">Login</Link></p>
                     </form>
-                    <p>Already have an account? <Link className='text-blue-500 underline' to="/login">Login</Link></p>
                 </div>
             </div>
         </div>
