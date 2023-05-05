@@ -24,7 +24,7 @@ const Chefs = () => {
 
     return (
         <div className='px-4 md:px-24 lg:px-8'>
-            <h1 className='text-center font-bold my-10 text-blue-700 text-5xl my-12'>Choice Your Chef</h1>
+            <h1 className='text-center font-bold text-blue-700 text-5xl my-12'>Choice Your Chef</h1>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {loading ?
                     chefs?.map(chef => <ChefCard
